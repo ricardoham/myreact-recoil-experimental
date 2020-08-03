@@ -1,12 +1,20 @@
 import React from 'react';
-import { useRecoilValue } from 'recoil';
+import { useRecoilValue, useRecoilState } from 'recoil';
 import { counterState } from '../../recoil/counter-recoil/atom';
+import { counterSelector } from '../../recoil/counter-recoil/selector';
 
 const Counter = () => {
-  const counter = useRecoilValue(counterState)
+  const [counter, setCounter] = useRecoilState(counterState);
+  const countNumber = useRecoilValue(counterSelector);
+
+  const  handleIncrement = () => {
+    setCounter(counter + 1);
+  }
  return ( <section>
     <header>
       <h4>Counter Example</h4>
+      <button onClick={handleIncrement}>Add number</button>
+      <span>Counter: {countNumber} </span>
     </header>
   </section>
  )
