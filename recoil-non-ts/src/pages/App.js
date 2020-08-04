@@ -1,15 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
+import Navbar from '../components/navbar/Navbar';
+import Routes from '../routes/Routes';
+
 import './App.css';
-import Counter from './components/counter/counter'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src='/assets/logo.svg' className="App-logo" alt="logo" />
       </header>
-      <Counter />
+      <Navbar />
+      <Routes />
     </div>
   );
 }
