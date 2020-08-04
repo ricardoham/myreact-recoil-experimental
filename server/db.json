@@ -1,0 +1,39 @@
+{
+  "games": [
+    {
+      "id": "g01",
+      "title": "God of War",
+      "console": "PS4"
+    },
+    {
+      "id": "g02",
+      "title": "Gears of War 5",
+      "console": "Xbox One"
+    },
+    {
+      "id": "g03",
+      "title": "World of Warcraft",
+      "console": "PC"
+    },
+    {
+      "id": "g04",
+      "title": "Mario Odyssey",
+      "console": "Nintendo Switch"
+    }
+  ],
+  "users": [
+    {
+      "id": "u01",
+      "name": "Robin",
+      "password": "123",
+      "favGames": [
+        {
+          "id": "g01",
+          "title": "God of War",
+          "console": "PS4"
+        }
+      ],
+      "isAdmin": false
+    }
+  ]
+}
