@@ -8,6 +8,7 @@ const Navbar = () => (
       Home
     </NavLink>
     <NavLink className="side__link" to="/counter">Counter Example</NavLink>
+    <NavLink className="side__link" to="/crud">CRUD Example</NavLink>
   </aside>
 )
 
