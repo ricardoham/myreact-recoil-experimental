@@ -5,8 +5,12 @@ import { gamesAPI } from '../../api/api';
 export const gamesList = selector({
   key: 'gamesList',
   get: async () => {
-    const res = await gamesAPI.get('/games');
-    console.log('res', res);
-    return res;
+    try {
+      const res = await gamesAPI.get('/games');
+      return res.data;
+
+    } catch (err) {
+      console.log(err);
+    }
   }
 })
