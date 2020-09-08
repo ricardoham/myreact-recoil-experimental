@@ -1,7 +1,7 @@
 import React from 'react';
-import { gamesList } from '../../../../recoil/games/selector';
+import { gamesList } from 'recoil/games/selector';
 import { useRecoilValue } from 'recoil';
-import { generateIcon } from '../../../../utils/utils';
+import { generateIcon } from 'utils/utils';
 import { List } from './styles';
 
 const GamesList = () => {
@@ -10,8 +10,8 @@ const GamesList = () => {
   return (
     <List>
       {
-        games.map(item =>
-          <li>
+        games.map((item, index) =>
+          <li key={index}>
             <span>{item.title}</span>
             <List.Icon src={generateIcon(item.console)} />
           </li>
