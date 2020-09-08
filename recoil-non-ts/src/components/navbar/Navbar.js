@@ -1,15 +1,14 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import './navbar.css'
+import { SideBar } from './styles';
 
 const Navbar = () => (
-  <aside className="sidebar">
-    <NavLink className="side__link" exact to="/">
+  <SideBar>
+    <SideBar.Link exact to="/">
       Home
-    </NavLink>
-    <NavLink className="side__link" to="/counter">Counter Example</NavLink>
-    <NavLink className="side__link" to="/more">More Examples</NavLink>
-  </aside>
+    </SideBar.Link>
+    <SideBar.Link to="/counter">Counter Example</SideBar.Link>
+    <SideBar.Link to="/more">More Examples</SideBar.Link>
+  </SideBar>
 )
 
 export default Navbar;
