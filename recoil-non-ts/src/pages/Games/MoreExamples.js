@@ -1,13 +1,14 @@
-import React, { Suspense, useEffect } from 'react';
+import React from 'react';
 import ControlPanel from 'components/ControlPanel/ControlPanel';
-import Tab from 'components/ControlPanel/Tab/Tab';
 import Panel from 'components/ControlPanel/Panel/Panel';
 import GamesList from './components/GamesList/GamesList';
+import GamesForm from './components/GamesForm/GamesForm';
 
-const CrudExample = () => {
+const MoreExamples = () => {
   return (
     <>
       <GamesList />
+      <GamesForm />
       <ControlPanel>
         <Panel label="Counter">
           <span>Test</span>
@@ -20,4 +21,4 @@ const CrudExample = () => {
   )
 }
 
-export default CrudExample;
+export default MoreExamples;
