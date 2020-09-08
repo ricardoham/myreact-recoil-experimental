@@ -2,7 +2,12 @@ import styled from 'styled-components';
 
 export const List = styled.ul`
   display: flex;
-  list-style-type: none;
+  flex-direction: column;
+  align-items: flex-start;
+`;
+
+List.Item = styled.li`
+  padding: 10px;
 `;
 
 List.Icon = styled.img`

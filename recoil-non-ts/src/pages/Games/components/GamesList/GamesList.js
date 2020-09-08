@@ -11,10 +11,10 @@ const GamesList = () => {
     <List>
       {
         games.map((item, index) =>
-          <li key={index}>
+          <List.Item key={index}>
             <span>{item.title}</span>
             <List.Icon src={generateIcon(item.console)} />
-          </li>
+          </List.Item>
         )
       }
     </List>
