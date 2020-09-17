@@ -1,8 +1,10 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
+import * as yup from 'yup';
 import Input from 'components/Input/Input';
 import Combo from 'components/Combo/Combo';
 import Button from 'components/Button/Button';
+import CustomField from 'components/CustomField/CustomField';
 
 const GamesForm = ({ title, consoles }) => {
   const initialValues = {
@@ -10,6 +12,10 @@ const GamesForm = ({ title, consoles }) => {
     consoles: consoles || '',
   }
 
+  const validationSchema = yup.object().shape({
+    title: yup.string().required("Game title is required"),
+    consoles: yup.string().required("Need a vendor select"),
+  })
   const handleSubmit = (data) => {
     console.log("data", data)
   }
@@ -18,21 +24,18 @@ const GamesForm = ({ title, consoles }) => {
     <Formik
       initialValues={initialValues}
       onSubmit={handleSubmit}
+      validationSchema={validationSchema}
     >
       {({ values }) => {
         console.log("val", values)
         return (
           <Form>
-            <Field name="title">
-              {({
-                field,
-                form: { touched, errors },
-                meta,
-              }) => (
-                  <Input field={field} meta={meta} placeholder="Title" />
-                )}
-            </Field>
-            <Combo name="consoles" />
+            <CustomField name="title">
+              <Input placeholder="Title" />
+            </CustomField>
+            <CustomField name="consoles">
+              <Combo name="consoles" />
+            </CustomField>
             <Button text="Submit" />
           </Form>
         )

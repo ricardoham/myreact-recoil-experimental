@@ -9,4 +9,5 @@ export const StyledButton = styled.button`
   text-transform: uppercase;
   font-weight: 600;
   padding: 8px 16px;
+  margin: 12px;
 `;
