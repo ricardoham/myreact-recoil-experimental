@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Routes from '../routes/Routes';
 import ControlPanel from 'components/ControlPanel/ControlPanel';
 import Panel from 'components/ControlPanel/Panel/Panel';
 import './App.css';
 import { Content, ContentPanel } from './styles';
+import Counter from 'components/Counter/Counter';
 
 function App() {
+
   return (
     <main>
       <header className="App-header">
@@ -18,10 +20,10 @@ function App() {
           <Routes />
           <ControlPanel>
             <Panel label="Counter">
-              <span>Test</span>
+              <Counter />
             </Panel>
             <Panel label="Games">
-              <span>Test2</span>
+              <span>Test</span>
             </Panel>
           </ControlPanel>
         </ContentPanel>

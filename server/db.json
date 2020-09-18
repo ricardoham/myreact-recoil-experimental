@@ -1,22 +1,22 @@
 {
   "games": [
     {
-      "id": "g01",
+      "id": 1,
       "title": "God of War",
       "console": "PS4"
     },
     {
-      "id": "g02",
+      "id": 2,
       "title": "Gears of War 5",
       "console": "Xbox One"
     },
     {
-      "id": "g03",
+      "id": 3,
       "title": "World of Warcraft",
       "console": "PC"
     },
     {
-      "id": "g04",
+      "id": 4,
       "title": "Mario Odyssey",
       "console": "Nintendo Switch"
     }
