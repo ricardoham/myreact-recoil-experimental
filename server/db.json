@@ -3,47 +3,22 @@
     {
       "id": 1,
       "title": "God of War",
-      "console": "PS4"
+      "consoles": "PS4"
     },
     {
       "id": 2,
       "title": "Gears of War 5",
-      "console": "Xbox One"
+      "consoles": "Xbox One"
     },
     {
       "id": 3,
       "title": "World of Warcraft",
-      "console": "PC"
+      "consoles": "PC"
     },
     {
       "id": 4,
       "title": "Mario Odyssey",
-      "console": "Nintendo Switch"
-    },
-    {
-      "title": "aa",
-      "consoles": "ps4",
-      "id": 5
-    },
-    {
-      "title": "333",
-      "consoles": "ps4",
-      "id": 6
-    },
-    {
-      "title": "ffrfr",
-      "consoles": "ps4",
-      "id": 7
-    },
-    {
-      "title": "ffff331",
-      "consoles": "ps4",
-      "id": 8
-    },
-    {
-      "title": "33333f",
-      "consoles": "ps4",
-      "id": 9
+      "consoles": "Nintendo Switch"
     }
   ],
   "users": [

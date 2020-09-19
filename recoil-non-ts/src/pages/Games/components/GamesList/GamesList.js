@@ -14,7 +14,7 @@ const GamesList = () => {
           games.map((item, index) =>
             <List.Item key={index}>
               <span>{item.title}</span>
-              <List.Icon src={generateIcon(item.console)} />
+              <List.Icon src={generateIcon(item.consoles)} />
             </List.Item>
           )
         }

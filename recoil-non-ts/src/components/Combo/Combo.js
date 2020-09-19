@@ -7,7 +7,7 @@ const Combo = ({ name, ...props }) => (
     <option value="">Select</option>
     {
       consoles.map(item => (
-        <option key={item.id} value={item.id}>{item.name}</option>
+        <option key={item.id} value={item.name}>{item.name}</option>
       ))
     }
   </Select>
