@@ -5,12 +5,12 @@ import Input from 'components/Input/Input';
 import Combo from 'components/Combo/Combo';
 import Button from 'components/Button/Button';
 import CustomField from 'components/CustomField/CustomField';
-import { useRecoilState, useRecoilValue } from 'recoil';
-import { saveFavGame } from 'recoil/games/selectors';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
+import { useSaveFavGame, saveFavGame } from 'recoil/games/selectors';
 
 const GamesForm = ({ title, consoles }) => {
-  // const test = useRecoilValue(saveFavGame())
-  // const [test, setTest] = useRecoilState(saveFavGame)
+  // const setTest = useSetRecoilState(saveFavGame)
+  const setFavGame = useSaveFavGame();
   const initialValues = {
     title: title || '',
     consoles: consoles || '',
@@ -22,8 +22,8 @@ const GamesForm = ({ title, consoles }) => {
   })
 
   const handleSubmit = (data) => {
-    console.log("data", data)
-    saveFavGame(data)
+    // setTest(data)
+    setFavGame(data)
   }
 
   return (
