@@ -30,9 +30,9 @@ const ControlPanel = ({ children }) => {
         }
       </ControlPanelTabs>
       {
-        children.map(({ props }) => (
-          <ControlPanelContent>
-            { activeTab === props.label && props.children}
+        children.map(({ props }, index) => (
+          <ControlPanelContent key={index}>
+            {activeTab === props.label && props.children}
           </ControlPanelContent>
         ))
       }

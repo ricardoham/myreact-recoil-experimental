@@ -30,12 +30,19 @@ export const saveFavGame = selector({
   }
 })
 
+export const removeGame = selectorFamily({
+  key: 'removeGame',
+  get: id => ({ get }) => {
+    return get(gamesState).filter(item => item !== id)
+  }
+})
+
 export const useSaveFavGame = () => {
   const favGame = useRecoilCallback(
     ({ set }) => async newFavGame => {
       try {
         const res = await gamesAPI.post('/games', newFavGame);
-        set(gamesState, currentGames => [...currentGames, newFavGame])
+        set(gamesState, currentGames => [...currentGames, res.data])
         return res;
       } catch (err) {
         console.error(err)
@@ -44,3 +51,17 @@ export const useSaveFavGame = () => {
   )
   return favGame
 }
+
+export const useRemoveFavGame = () => (
+  useRecoilCallback(({ set }) => async id => {
+    try {
+      const res = await gamesAPI.delete(`/games/${id}`);
+      set(gamesState, currGames => (
+        currGames.filter(game => game.id !== id)
+      ))
+      return res;
+    } catch (err) {
+      console.error(err);
+    }
+  }
+  ))
