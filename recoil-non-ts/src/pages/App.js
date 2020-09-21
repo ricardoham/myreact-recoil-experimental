@@ -4,7 +4,7 @@ import Routes from '../routes/Routes';
 import ControlPanel from 'components/ControlPanel/ControlPanel';
 import Panel from 'components/ControlPanel/Panel/Panel';
 import './App.css';
-import { Content, ContentPanel } from './styles';
+import { Container, Content } from './styles';
 import Counter from 'components/Counter/Counter';
 import GamesList from './Games/components/GamesList/GamesList';
 
@@ -15,20 +15,20 @@ function App() {
       <header className="App-header">
         <img src='/assets/logo.svg' className="App-logo" alt="logo" />
       </header>
-      <Content>
+      <Container>
         <Navbar />
-        <ContentPanel>
+        <Content>
           <Routes />
-          <ControlPanel>
-            <Panel label="Counter">
-              <Counter />
-            </Panel>
-            <Panel label="Games">
-              <GamesList />
-            </Panel>
-          </ControlPanel>
-        </ContentPanel>
-      </Content>
+        </Content>
+        <ControlPanel>
+          <Panel label="Counter">
+            <Counter />
+          </Panel>
+          <Panel label="Games">
+            <GamesList />
+          </Panel>
+        </ControlPanel>
+      </Container>
     </main>
   );
 }

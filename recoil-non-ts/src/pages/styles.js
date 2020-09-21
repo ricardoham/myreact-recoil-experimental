@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const Content = styled.section`
+export const Container = styled.section`
   display: flex;
 `;
 
-export const ContentPanel = styled.section`
-  display: flex;
+export const Content = styled.div`
+  flex: 1
 `;
 

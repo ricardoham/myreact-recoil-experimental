@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, Form } from 'formik';
+import { Formik } from 'formik';
 import * as yup from 'yup';
 import Input from 'components/Input/Input';
 import Combo from 'components/Combo/Combo';
@@ -7,6 +7,7 @@ import Button from 'components/Button/Button';
 import CustomField from 'components/CustomField/CustomField';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import { useSaveFavGame, saveFavGame } from 'recoil/games/selectors';
+import { Form } from './styles';
 
 const GamesForm = ({ title, consoles }) => {
   // const setTest = useSetRecoilState(saveFavGame)
@@ -36,6 +37,7 @@ const GamesForm = ({ title, consoles }) => {
         // console.log("val", values);
         return (
           <Form>
+            <h3>Add new Fav Game</h3>
             <CustomField name="title">
               <Input placeholder="Title" />
             </CustomField>

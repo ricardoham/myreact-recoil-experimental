@@ -4,6 +4,5 @@ import { Form as FormikForm } from 'formik';
 export const Form = styled(FormikForm)`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  padding: 12px;
 `;

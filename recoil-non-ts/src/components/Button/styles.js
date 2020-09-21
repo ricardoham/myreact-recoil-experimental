@@ -10,4 +10,5 @@ export const StyledButton = styled.button`
   font-weight: 600;
   padding: 8px 16px;
   margin: 12px;
+  width: 132px;
 `;
