@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { StyledTab } from './styles';
 
-const Tab = ({ onActiveTab, label }) => {
+const Tab = ({ onActiveTab, label, activeTab }) => {
   return (
-    <div onClick={onActiveTab}>
+    <StyledTab activeTab={activeTab} onClick={onActiveTab}>
       <span>{label}</span>
-    </div>
+    </StyledTab>
   )
 }
 

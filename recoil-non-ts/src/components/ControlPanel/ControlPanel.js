@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types';
 import Tab from './Tab/Tab';
 
-import { StyledControlPanel } from './styles';
+import { ControlPanelContent, ControlPanelTabs, StyledControlPanel } from './styles';
 
 const ControlPanel = ({ children }) => {
   const [activeTab, setActiveTab] = useState(children[0].props.label);
@@ -13,20 +13,28 @@ const ControlPanel = ({ children }) => {
 
   return (
     <StyledControlPanel>
-      {
-        children.length > 1 ?
-          children.map(({ props }, index) => {
-            return (
-              <div key={index}>
+      <ControlPanelTabs>
+        {
+          children.length > 1 ?
+            children.map(({ props }, index) => {
+              return (
                 <Tab
+                  key={index}
+                  activeTab={activeTab}
                   label={props.label}
                   onActiveTab={() => handleActiveTab(props.label)}
                 />
-                {activeTab === props.label && props.children}
-              </div>
-            )
-          })
-          : children
+              )
+            })
+            : children
+        }
+      </ControlPanelTabs>
+      {
+        children.map(({ props }) => (
+          <ControlPanelContent>
+            { activeTab === props.label && props.children}
+          </ControlPanelContent>
+        ))
       }
     </StyledControlPanel>
   )

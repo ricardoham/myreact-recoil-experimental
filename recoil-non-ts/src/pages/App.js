@@ -6,6 +6,7 @@ import Panel from 'components/ControlPanel/Panel/Panel';
 import './App.css';
 import { Content, ContentPanel } from './styles';
 import Counter from 'components/Counter/Counter';
+import GamesList from './Games/components/GamesList/GamesList';
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
               <Counter />
             </Panel>
             <Panel label="Games">
-              <span>Test</span>
+              <GamesList />
             </Panel>
           </ControlPanel>
         </ContentPanel>
