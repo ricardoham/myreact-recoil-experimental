@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from '../pages/Home/Home';
-import Counter from '../components/Counter/Counter';
+import Counter from 'components/Counter/Counter';
 import MoreExamples from '../pages/Games/MoreExamples';
 
 const Routes = () => (
