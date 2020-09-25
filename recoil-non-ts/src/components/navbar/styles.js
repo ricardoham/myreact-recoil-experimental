@@ -4,16 +4,21 @@ import { NavLink } from 'react-router-dom';
 export const SideBar = styled.aside`
   display: flex;
   flex-direction: column;
-  align-items: end;
-  margin: 1rem .8rem;
+  margin: 12px 18px;
+  background-color: #fff;
+  padding: 18px 12px;
+  border: 1px solid #E1E1E1;
 `;
 
 SideBar.Link = styled(NavLink)`
-  color: #181818;
+  color: #222;
   text-decoration: none;
   padding: .5rem;
-  font-weight: 600;
-  background: #ffeaa7;
-  border-radius: 4px;
-  margin-bottom: 5px;
+  font-weight: 500;
+  margin-bottom: 18px;
+
+  &.active {
+    background: #48dbfb;
+    border-radius: 4px;
+  }
 `;

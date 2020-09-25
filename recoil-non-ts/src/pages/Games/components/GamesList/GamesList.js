@@ -12,6 +12,7 @@ const GamesList = ({ isRemove }) => {
 
   return (
     <List>
+      <h3>Games List</h3>
       {
         games.map((item, index) =>
           <List.Item key={index}>

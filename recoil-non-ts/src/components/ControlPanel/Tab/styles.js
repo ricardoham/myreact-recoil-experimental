@@ -11,7 +11,7 @@ export const StyledTab = styled.div`
     if (props.activeTab && '4px solid blue') {
       return `
         opacity: 1;
-        border-bottom: 4px solid blue;
+        border-bottom: 4px solid #48dbfb;
         font-weight: 600;
         `
     }

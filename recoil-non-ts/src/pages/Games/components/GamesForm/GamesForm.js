@@ -7,7 +7,7 @@ import Button from 'components/Button/Button';
 import CustomField from 'components/CustomField/CustomField';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import { useSaveFavGame, saveFavGame } from 'recoil/games/selectors';
-import { Form } from './styles';
+import { Form, FormContent } from './styles';
 
 const GamesForm = ({ title, consoles }) => {
   // const setTest = useSetRecoilState(saveFavGame)
@@ -38,12 +38,14 @@ const GamesForm = ({ title, consoles }) => {
         return (
           <Form>
             <h3>Add new Fav Game</h3>
-            <CustomField name="title">
-              <Input placeholder="Title" />
-            </CustomField>
-            <CustomField name="consoles">
-              <Combo name="consoles" />
-            </CustomField>
+            <FormContent>
+              <CustomField name="title">
+                <Input placeholder="Title" />
+              </CustomField>
+              <CustomField name="consoles">
+                <Combo name="consoles" />
+              </CustomField>
+            </FormContent>
             <Button text="Submit" />
           </Form>
         )
