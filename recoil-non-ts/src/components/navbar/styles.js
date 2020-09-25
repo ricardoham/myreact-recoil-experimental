@@ -6,7 +6,6 @@ export const SideBar = styled.aside`
   flex-direction: column;
   align-items: end;
   margin: 1rem .8rem;
-  height: 100vh;
 `;
 
 SideBar.Link = styled(NavLink)`

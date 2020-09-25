@@ -1,10 +1,19 @@
 import styled from 'styled-components';
 
 export const StyledTab = styled.div`
-  border: 1px solid grey;
   padding: 16px;
-  border-radius: 4px;
   margin-right: 5px;
   cursor: pointer;
   height: 10px;
+  width: 100%;
+  text-align: center;
+  ${(props) => {
+    if (props.activeTab && '4px solid blue') {
+      return `
+        opacity: 1;
+        border-bottom: 4px solid blue;
+        font-weight: 600;
+        `
+    }
+  }};
 `;

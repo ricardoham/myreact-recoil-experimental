@@ -8,6 +8,7 @@ export const StyledButton = styled.button`
   color: #fff;
   text-transform: uppercase;
   font-weight: 600;
+  font-size: 11px;
   padding: 8px 16px;
   margin: 12px;
   width: 132px;

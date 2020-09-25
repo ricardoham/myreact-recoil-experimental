@@ -2,6 +2,7 @@ import React from 'react';
 import { StyledTab } from './styles';
 
 const Tab = ({ onActiveTab, label, activeTab }) => {
+  console.log("aaa", activeTab);
   return (
     <StyledTab activeTab={activeTab} onClick={onActiveTab}>
       <span>{label}</span>

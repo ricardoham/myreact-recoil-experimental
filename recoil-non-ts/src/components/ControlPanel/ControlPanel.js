@@ -20,7 +20,7 @@ const ControlPanel = ({ children }) => {
               return (
                 <Tab
                   key={index}
-                  activeTab={activeTab}
+                  activeTab={activeTab === props.label}
                   label={props.label}
                   onActiveTab={() => handleActiveTab(props.label)}
                 />
