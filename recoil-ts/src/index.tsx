@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { RecoilRoot } from 'recoil';
+import { BrowserRouter } from 'react-router-dom';
+import GlobalStyle from './globalStyles';
+import App from './pages/App';
 import * as serviceWorker from './serviceWorker';
+import { IconContext } from 'react-icons/lib';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <GlobalStyle />
+      <RecoilRoot>
+        <IconContext.Provider value={{ className: 'icons' }}>
+          <App />
+        </IconContext.Provider>
+      </RecoilRoot>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
