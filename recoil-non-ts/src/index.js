@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import GlobalStyle from './globalStyles';
 import App from './pages/App';
 import * as serviceWorker from './serviceWorker';
+import { IconContext } from 'react-icons/lib';
 
 
 ReactDOM.render(
@@ -12,7 +13,9 @@ ReactDOM.render(
     <BrowserRouter>
       <GlobalStyle />
       <RecoilRoot>
-        <App />
+        <IconContext.Provider value={{ className: 'icons' }}>
+          <App />
+        </IconContext.Provider>
       </RecoilRoot>
     </BrowserRouter>
   </React.StrictMode>,

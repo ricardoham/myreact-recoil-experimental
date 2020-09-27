@@ -4,9 +4,9 @@ import { generateIcon } from 'utils/utils';
 import { List } from './styles';
 import { gamesState } from 'recoil/games/atoms';
 import { useRemoveFavGame } from 'recoil/games/selectors';
-import Button from 'components/Button/Button';
+import { FaEdit, FaTrash } from 'react-icons/fa'
 
-const GamesList = ({ isRemove }) => {
+const GamesList = ({ isRemove, isEdit }) => {
   const games = useRecoilValue(gamesState);
   const remove = useRemoveFavGame();
 
@@ -19,10 +19,12 @@ const GamesList = ({ isRemove }) => {
             <span>{item.title}</span>
             <List.Icon src={generateIcon(item.consoles)} />
             {
+              !isEdit &&
+              <FaEdit />
+            }
+            {
               !isRemove &&
-              <Button
-                text="Delete"
-                color="secondary"
+              <FaTrash
                 onClick={() => remove(item.id)}
               />
             }

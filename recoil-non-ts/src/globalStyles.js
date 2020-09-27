@@ -12,6 +12,13 @@ const StyledGlobal = createGlobalStyle`
     list-style-type: none;
     padding: 0;
   }
+
+  .icons {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    cursor: pointer;
+  }
 `;
 
 export default StyledGlobal;
