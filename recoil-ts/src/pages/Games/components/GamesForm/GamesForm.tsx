@@ -11,7 +11,7 @@ import { Form, FormContent } from './styles';
 
 interface Props {
   title?: string;
-  consoles?: any
+  consoles?: string
 }
 
 const GamesForm = ({ title, consoles }: Props) => {

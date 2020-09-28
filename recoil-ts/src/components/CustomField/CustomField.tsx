@@ -1,5 +1,5 @@
 import React from 'react';
-import { Field } from 'formik';
+import { Field, FieldProps } from 'formik';
 import { ErrorMessage } from './styles';
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 const CustomField = ({ name, children }: Props) => (
   <Field name={name}>
     {
-      ({ field, meta }: any) => {
+      ({ field, meta }: FieldProps) => {
         return (
           <>
             {

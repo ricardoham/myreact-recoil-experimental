@@ -1,11 +1,11 @@
 import React from 'react';
 
 interface Props {
-  children: JSX.Element;
-  label: string;
+  children: React.ReactNode;
+  label?: string;
 }
 
-const Panel = ({ children, label }: Props) => <div>{children}</div>
+const Panel = ({ children }: Props) => <div>{children}</div>
 
 
 export default Panel;

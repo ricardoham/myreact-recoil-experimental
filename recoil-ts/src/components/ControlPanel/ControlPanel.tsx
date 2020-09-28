@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types';
 import Tab from './Tab/Tab';
 
 import { ControlPanelContent, ControlPanelTabs, StyledControlPanel } from './styles';
 
 interface Props {
-  children: any;
+  children: JSX.Element[];
 }
 
 const ControlPanel = ({ children }: Props) => {
-  const [activeTab, setActiveTab] = useState(children[0].props.label);
+  const [activeTab, setActiveTab] = useState<string>(children[0].props.label);
 
   const handleActiveTab = (tab: string) => {
     setActiveTab(tab);
@@ -19,8 +18,8 @@ const ControlPanel = ({ children }: Props) => {
     <StyledControlPanel>
       <ControlPanelTabs>
         {
-          children.length > 1 ?
-            children.map(({ props }: any, index: number) => {
+          children && children.length > 1 ?
+            children.map(({ props }: JSX.Element, index: number) => {
               return (
                 <Tab
                   key={index}
@@ -34,7 +33,7 @@ const ControlPanel = ({ children }: Props) => {
         }
       </ControlPanelTabs>
       {
-        children.map(({ props }: any, index: number) => (
+        children && children.map(({ props }: any, index: number) => (
           <ControlPanelContent key={index}>
             {activeTab === props.label && props.children}
           </ControlPanelContent>
@@ -45,7 +44,3 @@ const ControlPanel = ({ children }: Props) => {
 }
 
 export default ControlPanel;
-
-ControlPanel.propTypes = {
-  children: PropTypes.node,
-}
