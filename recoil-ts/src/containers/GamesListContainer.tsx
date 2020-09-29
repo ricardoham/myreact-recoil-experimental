@@ -1,4 +1,5 @@
 import { gamesAPI } from 'api/api';
+import { Games } from 'model/games';
 import GamesList from 'pages/Games/components/GamesList/GamesList';
 import React, { Suspense, useEffect } from 'react';
 import { useSetRecoilState } from 'recoil';
@@ -10,8 +11,8 @@ const GamesListContainer = () => {
   useEffect(() => {
     const getGamesList = async () => {
       try {
-        const res = await gamesAPI.get('/games');
-        setGames(res.data)
+        const { data } = await gamesAPI.get<Games[]>('/games');
+        setGames(data)
       } catch (err) {
         console.log(err);
       }

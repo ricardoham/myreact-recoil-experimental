@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledInput, ErrorMessage } from './styles';
+import { StyledInput } from './styles';
 
 const Input = ({ placeholder, ...props }) => (
   <StyledInput placeholder={placeholder} {...props} />

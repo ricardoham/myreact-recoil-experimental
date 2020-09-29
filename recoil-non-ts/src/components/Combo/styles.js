@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Field } from 'formik';
 
 export const Select = styled.select`
   border: 1px solid #dfe6e9;

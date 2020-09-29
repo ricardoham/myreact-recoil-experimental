@@ -5,16 +5,16 @@ import Input from 'components/Input/Input';
 import Combo from 'components/Combo/Combo';
 import Button from 'components/Button/Button';
 import CustomField from 'components/CustomField/CustomField';
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import { useSaveFavGame, saveFavGame } from 'recoil/games/selectors';
+import { useEditFavGame, useSaveFavGame } from 'recoil/games/selectors';
 import { Form, FormContent } from './styles';
 
-const GamesForm = ({ title, consoles }) => {
-  // const setTest = useSetRecoilState(saveFavGame)
+const GamesForm = ({ favGame, isEdit }) => {
   const setFavGame = useSaveFavGame();
+  const editFavGame = useEditFavGame();
+  console.log(isEdit);
   const initialValues = {
-    title: title || '',
-    consoles: consoles || '',
+    title: favGame.title || '',
+    consoles: favGame.consoles || '',
   }
 
   const validationSchema = yup.object().shape({
@@ -23,18 +23,17 @@ const GamesForm = ({ title, consoles }) => {
   })
 
   const handleSubmit = (data) => {
-    // setTest(data)
-    setFavGame(data)
+    !isEdit ? setFavGame(data) : editFavGame(data, favGame.id)
   }
 
   return (
     <Formik
+      enableReinitialize
       initialValues={initialValues}
       onSubmit={handleSubmit}
       validationSchema={validationSchema}
     >
-      {({ values }) => {
-        // console.log("val", values);
+      {() => {
         return (
           <Form>
             <h3>Add new Fav Game</h3>
@@ -46,7 +45,7 @@ const GamesForm = ({ title, consoles }) => {
                 <Combo name="consoles" />
               </CustomField>
             </FormContent>
-            <Button text="Submit" />
+            <Button text={isEdit ? "Edit" : "Submit"} />
           </Form>
         )
       }

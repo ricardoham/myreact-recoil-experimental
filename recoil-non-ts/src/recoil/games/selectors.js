@@ -15,21 +15,6 @@ export const getGamesList = selector({
   }
 })
 
-
-export const saveFavGame = selector({
-  key: 'saveFavGame',
-  get: ({ get }) => { },
-  set: async ({ set, get }, newValue) => {
-    try {
-      const res = await gamesAPI.post('/games', newValue);
-      set(gamesState, newValue)
-      return get(gamesState)
-    } catch (err) {
-      console.error(err)
-    }
-  }
-})
-
 export const removeGame = selectorFamily({
   key: 'removeGame',
   get: id => ({ get }) => {
@@ -64,4 +49,21 @@ export const useRemoveFavGame = () => (
       console.error(err);
     }
   }
-  ))
+  )
+)
+
+export const useEditFavGame = () => {
+  const favGame = useRecoilCallback(
+    ({ set }) => async (newFavGame, id) => {
+      try {
+        const res = await gamesAPI.put(`/games/${id}`, newFavGame);
+        set(gamesState, currentGames =>
+          currentGames.map(item => item.id === id ? newFavGame : item))
+        return res;
+      } catch (err) {
+        console.error(err)
+      }
+    }
+  )
+  return favGame
+}

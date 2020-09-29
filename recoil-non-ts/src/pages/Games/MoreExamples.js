@@ -1,16 +1,27 @@
-import React from 'react';
-import GamesList from './components/GamesList/GamesList';
+import React, { useState } from 'react';
 import GamesForm from './components/GamesForm/GamesForm';
 import GamesListContainer from 'containers/GamesListContainer';
 
 import { GamesContainer } from './styles';
 
 const MoreExamples = () => {
+  const [items, setItems] = useState({
+    item: {
+      id: 0,
+      title: '',
+      consoles: ''
+    },
+    isEdit: false,
+  })
+
+  const handleGetEditItems = (item, isEdit) => {
+    setItems({ item, isEdit })
+  }
+
   return (
     <GamesContainer>
-      {/* <GamesList /> */}
-      <GamesListContainer />
-      <GamesForm />
+      <GamesListContainer onEditItems={handleGetEditItems} />
+      <GamesForm favGame={items.item} isEdit={items.isEdit} />
     </GamesContainer>
   )
 }

@@ -1,10 +1,10 @@
+import React, { Suspense, useEffect } from 'react';
 import { gamesAPI } from 'api/api';
 import GamesList from 'pages/Games/components/GamesList/GamesList';
-import React, { Suspense, useEffect } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { gamesState } from 'recoil/games/atoms';
 
-const GamesListContainer = () => {
+const GamesListContainer = ({ onEditItems }) => {
   const setGames = useSetRecoilState(gamesState);
 
   useEffect(() => {
@@ -17,12 +17,13 @@ const GamesListContainer = () => {
       }
     }
     getGamesList()
+    // eslint-disable-next-line
   }, [])
 
   return (
     <div>
       <Suspense fallback={<div>Loading...</div>}>
-        <GamesList />
+        <GamesList onEditItems={onEditItems} />
       </Suspense>
     </div>
   )
