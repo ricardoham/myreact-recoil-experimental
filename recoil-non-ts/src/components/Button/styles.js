@@ -11,4 +11,5 @@ export const StyledButton = styled.button`
   font-size: 11px;
   padding: 8px 16px;
   width: 132px;
+  margin-bottom: 8px;
 `;

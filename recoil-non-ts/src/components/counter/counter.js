@@ -1,22 +1,26 @@
+import Button from 'components/Button/Button';
 import React from 'react';
-import { useRecoilValue, useRecoilState } from 'recoil';
+import { useRecoilState, useSetRecoilState } from 'recoil';
 import { counterState } from 'recoil/counter-recoil/atom';
-import { counterSelector } from 'recoil/counter-recoil/selector';
+import { multipleWithValue } from 'recoil/counter-recoil/selector';
+
+import { CounterContainer } from './styles';
 
 const Counter = () => {
-  const [counter, setCounter] = useRecoilState(counterState);
-  const countNumber = useRecoilValue(counterSelector);
+  const [count, setCounter] = useRecoilState(counterState);
+  const setMultiple = useSetRecoilState(multipleWithValue);
 
-  const handleIncrement = () => {
-    setCounter(counter + 1);
-  }
-  return (<section>
-    <header>
-      <h4>Counter Example</h4>
-      <button onClick={handleIncrement}>Add number</button>
-      <span>Counter: {countNumber} </span>
-    </header>
-  </section>
+  return (
+    <section>
+      <header>
+        <h3>Counter Example</h3>
+        <CounterContainer>
+          <Button onClick={() => setCounter(count + 1)}>Add number</Button>
+          <Button onClick={() => setMultiple(3)}>Multiple with value</Button>
+          <span>Count: {count} </span>
+        </CounterContainer>
+      </header>
+    </section>
   )
 }
 

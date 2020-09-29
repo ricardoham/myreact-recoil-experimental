@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar/Navbar';
 import Routes from '../routes/Routes';
 import ControlPanel from 'components/ControlPanel/ControlPanel';
 import Panel from 'components/ControlPanel/Panel/Panel';
-import Counter from 'components/Counter/Counter';
+import CounterControl from './Counter/CounterControl';
 import GamesList from './Games/components/GamesList/GamesList';
 import './App.css';
 import { Container, Content } from './styles';
@@ -22,7 +22,7 @@ function App() {
         </Content>
         <ControlPanel>
           <Panel label="Counter">
-            <Counter />
+            <CounterControl />
           </Panel>
           <Panel label="Games">
             <GamesList />
