@@ -16,7 +16,7 @@ export const multipleCount = selector({
 
 export const multipleWithValue = selector({
   key: 'multipleWithValue',
-  get: ({ get }, value) => get(counterState) + value,
+  get: ({ get }) => get(counterState),
   set: ({ set, get }, value) => {
     const curr = get(counterState);
     return set(counterState, curr * value)
