@@ -12,12 +12,13 @@ const GamesListContainer = () => {
     const getGamesList = async () => {
       try {
         const { data } = await gamesAPI.get<Games[]>('/games');
-        setGames(data)
+        setGames(data);
       } catch (err) {
         console.log(err);
       }
     }
-    getGamesList()
+    getGamesList();
+    // eslint-disable-next-line
   }, [])
 
   return (

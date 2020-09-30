@@ -5,8 +5,7 @@ import Input from 'components/Input/Input';
 import Combo from 'components/Combo/Combo';
 import Button from 'components/Button/Button';
 import CustomField from 'components/CustomField/CustomField';
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import { useSaveFavGame, saveFavGame } from 'recoil/games/selectors';
+import { useSaveFavGame } from 'recoil/games/selectors';
 import { Form, FormContent } from './styles';
 
 interface Props {
@@ -15,7 +14,6 @@ interface Props {
 }
 
 const GamesForm = ({ title, consoles }: Props) => {
-  // const setTest = useSetRecoilState(saveFavGame)
   const setFavGame = useSaveFavGame();
   const initialValues = {
     title: title || '',
@@ -28,7 +26,6 @@ const GamesForm = ({ title, consoles }: Props) => {
   })
 
   const handleSubmit = (data: any) => {
-    // setTest(data)
     setFavGame(data)
   }
 
@@ -38,8 +35,7 @@ const GamesForm = ({ title, consoles }: Props) => {
       onSubmit={handleSubmit}
       validationSchema={validationSchema}
     >
-      {({ values }) => {
-        // console.log("val", values);
+      {() => {
         return (
           <Form>
             <h3>Add new Fav Game</h3>

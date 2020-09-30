@@ -16,21 +16,6 @@ export const getGamesList = selector<Games[]>({
   }
 })
 
-
-export const saveFavGame = selector({
-  key: 'saveFavGame',
-  get: ({ get }) => { },
-  set: async ({ set, get }, newValue: any) => {
-    try {
-      const res = await gamesAPI.post('/games', newValue);
-      set(gamesState, newValue)
-      return get(gamesState)
-    } catch (err) {
-      console.error(err)
-    }
-  }
-})
-
 export const removeGame = selectorFamily({
   key: 'removeGame',
   get: (id: number) => ({ get }) => {

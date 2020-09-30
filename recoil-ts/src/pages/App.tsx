@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Routes from '../routes/Routes';
 import ControlPanel from 'components/ControlPanel/ControlPanel';

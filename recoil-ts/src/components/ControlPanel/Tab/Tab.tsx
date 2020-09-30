@@ -8,9 +8,6 @@ interface Props {
 }
 
 const Tab = ({ onActiveTab, label, activeTab }: Props) => {
-  console.log("aaa", activeTab);
-  console.log("bb", label);
-
   return (
     <StyledTab activeTab={activeTab} onClick={onActiveTab}>
       <span>{label}</span>
