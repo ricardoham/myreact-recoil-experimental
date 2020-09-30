@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Routes from '../routes/Routes';
 import ControlPanel from 'components/ControlPanel/ControlPanel';
@@ -25,7 +25,9 @@ function App() {
             <CounterControl />
           </Panel>
           <Panel label="Games">
-            <GamesList />
+            <Suspense fallback={<div>Loading..</div>}>
+              <GamesList />
+            </Suspense>
           </Panel>
         </ControlPanel>
       </Container>

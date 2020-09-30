@@ -4,17 +4,17 @@ import * as yup from 'yup';
 import Input from 'components/Input/Input';
 import Combo from 'components/Combo/Combo';
 import Button from 'components/Button/Button';
+import { useSaveFavGame } from 'recoil/games/selectors';
+
 import CustomField from 'components/CustomField/CustomField';
-import { useEditFavGame, useSaveFavGame } from 'recoil/games/selectors';
 import { Form, FormContent } from './styles';
 
-const GamesForm = ({ favGame, isEdit }) => {
+const GamesForm = ({ favGame }) => {
+
   const setFavGame = useSaveFavGame();
-  const editFavGame = useEditFavGame();
-  console.log(isEdit);
   const initialValues = {
-    title: favGame.title || '',
-    consoles: favGame.consoles || '',
+    title: favGame || '',
+    consoles: favGame || '',
   }
 
   const validationSchema = yup.object().shape({
@@ -23,7 +23,7 @@ const GamesForm = ({ favGame, isEdit }) => {
   })
 
   const handleSubmit = (data) => {
-    !isEdit ? setFavGame(data) : editFavGame(data, favGame.id)
+    setFavGame(data);
   }
 
   return (
@@ -45,7 +45,7 @@ const GamesForm = ({ favGame, isEdit }) => {
                 <Combo name="consoles" />
               </CustomField>
             </FormContent>
-            <Button text={isEdit ? "Edit" : "Submit"} />
+            <Button text={"Submit"} />
           </Form>
         )
       }

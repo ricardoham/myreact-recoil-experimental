@@ -4,7 +4,7 @@ import GamesList from 'pages/Games/components/GamesList/GamesList';
 import { useSetRecoilState } from 'recoil';
 import { gamesState } from 'recoil/games/atoms';
 
-const GamesListContainer = ({ onEditItems }) => {
+const GamesListContainer = () => {
   const setGames = useSetRecoilState(gamesState);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const GamesListContainer = ({ onEditItems }) => {
   return (
     <div>
       <Suspense fallback={<div>Loading...</div>}>
-        <GamesList onEditItems={onEditItems} />
+        <GamesList />
       </Suspense>
     </div>
   )
