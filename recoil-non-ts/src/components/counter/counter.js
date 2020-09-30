@@ -1,9 +1,8 @@
-import Button from 'components/Button/Button';
 import React from 'react';
+import Button from 'components/Button/Button';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { counterState } from 'recoil/counter-recoil/atom';
 import { multipleWithValue } from 'recoil/counter-recoil/selector';
-
 import { CounterContainer } from './styles';
 
 const Counter = () => {
